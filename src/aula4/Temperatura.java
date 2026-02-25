@@ -15,9 +15,14 @@ public class Temperatura {
             this.escala = escala;
         }
 
+        if(this.escala.equals("K") && this.valor < 0){
+            System.out.println("A temperatura em Kelvin não pode ser negativa!");
+        }
+
     }
 
     public double toCelsius(){
+
         if (this.escala.equals("F")) {
             return (this.valor - 32) / 1.8;
         } else if (this.escala.equals("K")) {
@@ -25,9 +30,11 @@ public class Temperatura {
         } else {
             return this.valor;
         }
+
     }
 
     public double toFahrenheit(){
+
         if (this.escala.equals("C")) {
             return (1.8 * this.valor + 32);
         } else if (this.escala.equals("K")) {
@@ -35,6 +42,7 @@ public class Temperatura {
         } else {
             return this.valor;
         }
+
     }
 
     public double toKelvin(){
@@ -52,4 +60,5 @@ public class Temperatura {
     public void imprimeComEscala() {
         System.out.println("A temperatura é: " + this.valor + "°" + this.escala);
     }
+
 }

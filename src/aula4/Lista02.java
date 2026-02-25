@@ -61,27 +61,50 @@ public class Lista02 {
 
         // Questão 3:
 
-        Temperatura temp = new Temperatura(32, "C");
-        Temperatura temp2 = new Temperatura(67, "F");
-        Temperatura temp3 = new Temperatura(24, "K");
+        Temperatura tempCelsius = new Temperatura(36, "C");
+        Temperatura tempFahrenheit = new Temperatura(36, "F");
+        Temperatura tempKelvin = new Temperatura(36, "K");
 
-        //Tetes
+        //Converções para cesius:
+        System.out.println(tempCelsius.toFahrenheit());
+        System.out.println(tempCelsius.toKelvin());
 
-        System.out.println(temp.toCelsius());
-        System.out.println(temp2.toCelsius());
-        System.out.println(temp3.toCelsius());
+        //Converções para fehrenheit:
+        System.out.println(tempFahrenheit.toCelsius());
+        System.out.println(tempFahrenheit.toKelvin());
 
-        System.out.println(temp.toFahrenheit());
-        System.out.println(temp2.toFahrenheit());
-        System.out.println(temp3.toCelsius());
+        //Converções para kelvin:
+        System.out.println(tempKelvin.toCelsius());
+        System.out.println(tempKelvin.toFahrenheit());
 
-        System.out.println(temp.toKelvin());
-        System.out.println(temp2.toKelvin());
-        System.out.println(temp3.toCelsius());
+        //Impressões com escala:
+        tempCelsius.imprimeComEscala();
+        tempFahrenheit.imprimeComEscala();
+        tempKelvin.imprimeComEscala();
 
-        temp.imprimeComEscala();
-        temp2.imprimeComEscala();
-        temp3.imprimeComEscala();
+        // Questão 4:
+
+        Estudante estudante = new Estudante("Lucas", 12345, 100, 100, 90, 88);
+        estudante.setNotas(100, 100, 100, 100);
+        System.out.println(estudante.getMedia());
+        System.out.println(estudante.getSituacao());
+        System.out.println(estudante.getNota(2));
+
+        Estudante estudante2 = new Estudante("Matheus", 12345, 50, 50, 50, 60);
+        estudante2.setNotas(50, 60, 40, 65);
+        System.out.println(estudante2.getMedia());
+        System.out.println(estudante2.getSituacao());
+        System.out.println(estudante2.getNota(2));
+
+        Estudante estudante3 = new Estudante("João", 12345, 10, 20, 30, 10);
+        estudante3.setNotas(10, 30, 20, 15);
+        System.out.println(estudante3.getMedia());
+        System.out.println(estudante3.getSituacao());
+        System.out.println(estudante3.getNota(2));
+
+        /*for(double nota : estudante2.notas){
+            System.out.println(nota);
+        }*/
 
     }
 
