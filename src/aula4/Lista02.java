@@ -175,11 +175,11 @@ public class Lista02 {
         System.out.println(circulo1.contemOutro(circulo2)); //True: Contém o cículo 2
         System.out.println(circulo2.contemOutro(circulo1)); //True: Não contém o cículo 1
 
-        // Questão 7: Finalizar testes.
+        // Questão 7:
 
         System.out.println("\nRelógio: ");
 
-        Relogio relogio1 = new Relogio(23, 59, 58);
+        Relogio relogio1 = new Relogio(23, 59, 57);
 
         System.out.println(relogio1.horas);
         System.out.println(relogio1.minutos);
@@ -187,8 +187,6 @@ public class Lista02 {
 
         System.out.println("Testes");
 
-        relogio1.tick();
-        relogio1.tick();
         relogio1.tick();
         relogio1.tick();
 
@@ -205,6 +203,25 @@ public class Lista02 {
         System.out.println(relogio1.isMaiorQue(relogio2));
 
         System.out.println(relogio2.isMaiorQue(relogio1));
+
+        // Resposta:
+
+        System.out.println("\nResposta: ");
+
+        Relogio relogioExemplo = new Relogio(23, 59, 57);
+        relogioExemplo.exibirHorario();
+
+        System.out.println("\nTeste 1: + 5 segundos");
+        relogioExemplo.adicionarSegundos(5);
+        relogioExemplo.exibirHorario();
+
+        System.out.println("\nTeste 2: + 5 segundos");
+        relogioExemplo.adicionarSegundos(5);
+        relogioExemplo.exibirHorario();
+
+        System.out.println("\nTeste 3: + 5 segundos");
+        relogioExemplo.adicionarSegundos(5);
+        relogioExemplo.exibirHorario();
 
     }
 
