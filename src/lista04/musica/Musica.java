@@ -9,15 +9,19 @@ public class Musica {
 
     public Musica(String titulo, String artista, int duracaoSegundos, String prioridade){
 
-        if(titulo == null || titulo.isBlank() || titulo.isBlank()){
+        if(titulo == null || titulo.isBlank()){
             throw new IllegalArgumentException();
         }
 
-        if(artista == null || artista.isBlank() || artista.isBlank()){
+        if(artista == null || artista.isBlank()){
             throw new IllegalArgumentException();
         }
 
         if(duracaoSegundos <= 0){
+            throw new IllegalArgumentException();
+        }
+
+        if(!prioridade.equals("NORMAL") && !prioridade.equals("URGENTE")){
             throw new IllegalArgumentException();
         }
 
@@ -28,12 +32,30 @@ public class Musica {
 
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getArtista(){
+        return artista;
+    }
+
+    public String getPrioridade(){
+        return prioridade;
+    }
+
     public void setPrioridade(String prioridade){
+
+        if(prioridade == null || prioridade.isBlank() || prioridade.isEmpty()){
+            throw new IllegalArgumentException();
+        }
+
         if(!prioridade.equals("NORMAL") && !prioridade.equals("URGENTE")){
             throw new IllegalArgumentException();
-        } else {
-            this.prioridade = prioridade;
         }
+
+        this.prioridade = prioridade;
+
     }
 
 }
