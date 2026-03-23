@@ -7,6 +7,10 @@ public class AgendaMedica {
 
     public List<Consulta> consultas;
 
+    public AgendaMedica(){
+        this.consultas = new ArrayList<>();
+    }
+
     public void agendar(Consulta c){
         if(c == null){
             throw new IllegalArgumentException();

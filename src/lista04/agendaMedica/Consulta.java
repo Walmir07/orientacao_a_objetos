@@ -23,7 +23,7 @@ public class Consulta {
         this.nomePaciente = nomePaciente;
         this.nomeMedico = nomeMedico;
         this.dataHora = dataHora;
-        this.status = "AGENDADO";
+        this.status = "AGENDADA";
         this.observacoes = "";
     }
 
@@ -52,7 +52,7 @@ public class Consulta {
     }
 
     public void confirmar(){
-        if(status.equals("ADENDADE")){
+        if(status.equals("AGENDADA")){
             this.status = "CONFIRMADA";
         }
     }
