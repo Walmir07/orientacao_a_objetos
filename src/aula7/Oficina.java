@@ -16,4 +16,14 @@ public class Oficina {
         return Collections.unmodifiableList(this.agendamentos);
     }
 
+    public double calcularFaturamento(){
+        double total = 0;
+
+        for(Agendamento a : agendamentos){
+            total += a.custoTotal();
+        }
+
+        return total;
+    }
+
 }

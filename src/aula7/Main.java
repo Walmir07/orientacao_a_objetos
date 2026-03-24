@@ -13,10 +13,10 @@ public class Main {
         Servico servico2 = new Servico("Fazer o motor", 2500.00);
         Servico servico3 = new Servico("Alinhamento e balanceamento", 250.00);
 
-        Agendamento agendamento1 = new Agendamento(cliente1, veiculo1);
+        Agendamento agendamento1 = new Agendamento(cliente1, veiculo1, "PESADO");
         agendamento1.addServico(servico1); // 150.
 
-        Agendamento agendamento2 = new Agendamento(cliente1, veiculo2);
+        Agendamento agendamento2 = new Agendamento(cliente1, veiculo2, "LEVE");
         agendamento2.addServico(servico2);
         agendamento2.addServico(servico3);
 
@@ -33,8 +33,7 @@ public class Main {
         System.out.println(agendamento1.custoTotal());
         System.out.println(agendamento2.custoTotal());
 
-
-
+        System.out.println(oficina.calcularFaturamento());
 
     }
 
