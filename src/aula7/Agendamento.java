@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Agendamento {
 
-    private Cliente cliente;
-    private Veiculo veiculo;
-    private List<Servico> servicos;
-    private String categoria;
+    protected Cliente cliente;
+    protected Veiculo veiculo;
+    protected List<Servico> servicos;
+    protected String categoria;
 
     public Agendamento(Cliente cliente, Veiculo veiculo, String categoria){
         this.cliente = cliente;

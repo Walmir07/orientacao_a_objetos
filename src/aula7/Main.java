@@ -35,6 +35,32 @@ public class Main {
 
         System.out.println(oficina.calcularFaturamento());
 
+        // Teste de classes herdadas:
+        System.out.println("########### Agendamento urgente ##########");
+
+        //Classe de agendamento normal 1.
+        Agendamento agendamentoNormal1 = new Agendamento(cliente1, veiculo1, "PESADO");
+        agendamentoNormal1.addServico(servico1); // 150.
+        System.out.println(agendamentoNormal1.custoTotal()); //195.
+
+        //Classe de agendamento urgente (Possui taxa de urgência).
+        Agendamento agendamentoUrgente1 = new AgendamentoUrgente(cliente1, veiculo1, "PESADO", 100);
+        agendamentoUrgente1.addServico(servico1); // 150.
+        System.out.println(agendamentoUrgente1.custoTotal()); //295.
+
+        // Teste de classes herdadas:
+        System.out.println("########### Agendamento retorno ##########");
+
+        //Classe de agendamento normal 2.
+        Agendamento agendamentoNormal2 = new Agendamento(cliente1, veiculo1, "PESADO");
+        agendamentoNormal2.addServico(servico1); // 150.
+        System.out.println(agendamentoNormal2.custoTotal()); //195.
+
+        //Classe de agendamento retorno (Possui desconto de retorno).
+        Agendamento agendamentoRetorno1 = new AgendamentoRetorno(cliente1, veiculo1, "PESADO");
+        agendamentoRetorno1.addServico(servico1); // 150.
+        System.out.println(agendamentoRetorno1.custoTotal()); //165.75.
+
     }
 
 }
