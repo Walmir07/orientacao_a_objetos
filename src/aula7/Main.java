@@ -5,6 +5,9 @@ public class Main {
     public static void main(String[] args) {
 
         Cliente cliente1 = new Cliente("João", "8399998888");
+        Cliente cliente2 = new Cliente("Maria", "8399887766");
+        Cliente cliente3 = new Cliente("Pedro", "8399665544");
+
 
         Veiculo veiculo1 = new Veiculo("ABC1234", "Chevrolet Onix", 2023);
         Veiculo veiculo2 = new Veiculo("XYZ2345", "BYD Dolphin", 2024);
@@ -44,7 +47,7 @@ public class Main {
         System.out.println(agendamentoNormal1.custoTotal()); //195.
 
         //Classe de agendamento urgente (Possui taxa de urgência).
-        Agendamento agendamentoUrgente1 = new AgendamentoUrgente(cliente1, veiculo1, "PESADO", 100);
+        Agendamento agendamentoUrgente1 = new AgendamentoUrgente(cliente2, veiculo1, "PESADO", 100);
         agendamentoUrgente1.addServico(servico1); // 150.
         System.out.println(agendamentoUrgente1.custoTotal()); //295.
 
@@ -57,10 +60,19 @@ public class Main {
         System.out.println(agendamentoNormal2.custoTotal()); //195.
 
         //Classe de agendamento retorno (Possui desconto de retorno).
-        Agendamento agendamentoRetorno1 = new AgendamentoRetorno(cliente1, veiculo1, "PESADO");
+        Agendamento agendamentoRetorno1 = new AgendamentoRetorno(cliente3, veiculo1, "PESADO");
         agendamentoRetorno1.addServico(servico1); // 150.
         System.out.println(agendamentoRetorno1.custoTotal()); //165.75.
 
+        //Testes de geração de relatório em oficina:
+
+        //Oficina urgente:
+        oficina.adicionar(agendamentoNormal1);
+        oficina.adicionar(agendamentoUrgente1);
+        oficina.adicionar(agendamentoRetorno1);
+
+        //Geração de relatórios:
+        oficina.gerarRelatorio();
     }
 
 }

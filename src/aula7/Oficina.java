@@ -26,4 +26,14 @@ public class Oficina {
         return total;
     }
 
+    public void gerarRelatorio() {
+
+        for(Agendamento agendamento : agendamentos){
+            System.out.println("Oficina{" +
+                                    "\n\tNome do cliente = " + agendamento.getCliente().getNome() +
+                                    "\n\tTipo de agendamento = " + agendamento.getClass().getSimpleName() +
+                                    "\n\tCusto calculado = " + agendamento.custoTotal() + "\n}");
+        }
+
+    }
 }
