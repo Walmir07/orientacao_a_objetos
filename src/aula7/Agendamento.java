@@ -1,11 +1,10 @@
 package aula7;
 
-import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Agendamento {
+public abstract class Agendamento {
 
     protected Cliente cliente;
     protected Veiculo veiculo;
@@ -51,17 +50,13 @@ public class Agendamento {
         this.categoria = categoria;
     }
 
-    public double custoTotal(){
-        double valor = 0;
-        for(Servico s : servicos){
-            valor += s.getPrecoBase();
-        }
+    public abstract double custoTotal();
+    public abstract double calcularDesconto();
 
-        if(categoria.equals("PESADO")){
-            return valor + valor * 0.3;
-        }
-
-        return valor;
+    public double calcularCustoTotal() {
+        double base = custoTotal(); // passo variável
+        double desconto = calcularDesconto(); // passo variável
+        return base - desconto;
     }
 
     @Override

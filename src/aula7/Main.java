@@ -16,16 +16,16 @@ public class Main {
         Servico servico2 = new Servico("Fazer o motor", 2500.00);
         Servico servico3 = new Servico("Alinhamento e balanceamento", 250.00);
 
-        Agendamento agendamento1 = new Agendamento(cliente1, veiculo1, "PESADO");
-        agendamento1.addServico(servico1); // 150.
+        //Agendamento agendamento1 = new Agendamento(cliente1, veiculo1, "PESADO");
+        //agendamento1.addServico(servico1); // 150.
 
-        Agendamento agendamento2 = new Agendamento(cliente1, veiculo2, "LEVE");
-        agendamento2.addServico(servico2);
-        agendamento2.addServico(servico3);
+        //Agendamento agendamento2 = new Agendamento(cliente1, veiculo2, "LEVE");
+        //agendamento2.addServico(servico2);
+        //agendamento2.addServico(servico3);
 
         Oficina oficina = new Oficina();
-        oficina.adicionar(agendamento1);
-        oficina.adicionar(agendamento2);
+        //oficina.adicionar(agendamento1);
+        //oficina.adicionar(agendamento2);
 
         for (Agendamento a : oficina.getAgendamentos()) {
             System.out.println(a);
@@ -33,8 +33,8 @@ public class Main {
 
         //Crie um método que calcule o custo total se um agendamento.
 
-        System.out.println(agendamento1.custoTotal());
-        System.out.println(agendamento2.custoTotal());
+        //System.out.println(agendamento1.custoTotal());
+        //System.out.println(agendamento2.custoTotal());
 
         System.out.println(oficina.calcularFaturamento());
 
@@ -42,9 +42,9 @@ public class Main {
         System.out.println("########### Agendamento urgente ##########");
 
         //Classe de agendamento normal 1.
-        Agendamento agendamentoNormal1 = new Agendamento(cliente1, veiculo1, "PESADO");
-        agendamentoNormal1.addServico(servico1); // 150.
-        System.out.println(agendamentoNormal1.custoTotal()); //195.
+        //Agendamento agendamentoNormal1 = new Agendamento(cliente1, veiculo1, "PESADO");
+        //agendamentoNormal1.addServico(servico1); // 150.
+        //System.out.println(agendamentoNormal1.custoTotal()); //195.
 
         //Classe de agendamento urgente (Possui taxa de urgência).
         Agendamento agendamentoUrgente1 = new AgendamentoUrgente(cliente2, veiculo1, "PESADO", 100);
@@ -55,9 +55,9 @@ public class Main {
         System.out.println("########### Agendamento retorno ##########");
 
         //Classe de agendamento normal 2.
-        Agendamento agendamentoNormal2 = new Agendamento(cliente1, veiculo1, "PESADO");
-        agendamentoNormal2.addServico(servico1); // 150.
-        System.out.println(agendamentoNormal2.custoTotal()); //195.
+        //Agendamento agendamentoNormal2 = new Agendamento(cliente1, veiculo1, "PESADO");
+        //agendamentoNormal2.addServico(servico1); // 150.
+        //System.out.println(agendamentoNormal2.custoTotal()); //195.
 
         //Classe de agendamento retorno (Possui desconto de retorno).
         Agendamento agendamentoRetorno1 = new AgendamentoRetorno(cliente3, veiculo1, "PESADO");
@@ -67,7 +67,7 @@ public class Main {
         //Testes de geração de relatório em oficina:
 
         //Oficina urgente:
-        oficina.adicionar(agendamentoNormal1);
+        //oficina.adicionar(agendamentoNormal1);
         oficina.adicionar(agendamentoUrgente1);
         oficina.adicionar(agendamentoRetorno1);
 

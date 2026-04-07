@@ -10,7 +10,24 @@ public class AgendamentoRetorno extends Agendamento {
 
     @Override
     public double custoTotal(){
-        return super.custoTotal() - (super.custoTotal() * desconto);
+        double valor = 0;
+        for(Servico s : servicos){
+            valor += s.getPrecoBase();
+        }
+
+        if(categoria.equals("PESADO")){
+            return valor + valor * 0.3;
+        }
+
+        return valor;
+    }
+
+    public double calcularDesconto(){
+       return (custoTotal() * desconto);
+    };
+
+    public double calcularCustoTotal(){
+        return custoTotal() - calcularDesconto();
     }
 
 }
