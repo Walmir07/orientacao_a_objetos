@@ -27,12 +27,7 @@ public abstract class Produto {
     public abstract String toString();
 
     public boolean equals(Produto obj){
-
-        if(obj.getTitulo().equals(titulo) && obj.getAutor().equals(autor)){
-            return true;
-        }
-
-        return false;
+        return obj.getTitulo().equals(titulo) && obj.getAutor().equals(autor);
     }
 
 }
