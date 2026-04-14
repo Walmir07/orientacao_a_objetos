@@ -16,7 +16,7 @@ public class Guerreiro extends Personagem {
 
     @Override
     public String getClasse() {
-        return "A classe desse personagem é:" + getClass();
+        return "Guerreiro";
     }
 
 }

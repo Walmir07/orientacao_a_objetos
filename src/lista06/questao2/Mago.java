@@ -27,7 +27,7 @@ public class Mago extends Personagem {
 
     @Override
     public String getClasse() {
-        return "A classe desse personagem é:" + getClass();
+        return "Mago";
     }
 
 }
