@@ -26,6 +26,14 @@ public class PlataformaLearnHub {
     }
 
     List<Compravel> listarCompravel(){
+
+        List<Curso> cursosCompraveis = new ArrayList<>();
+
+        for(Compravel compravel : compraveis){
+            Curso cursoCompravel = (Curso) compravel;
+            cursosCompraveis.add(cursoCompravel);
+        }
+
         return compraveis;
     }
 
@@ -59,15 +67,16 @@ public class PlataformaLearnHub {
 
     //Finalizar essa parte:
 
-    /*List<String> gerarRecibosEmLote(String nomeComprador) {
+    List<String> gerarRecibosEmLote(String nomeComprador) {
 
-        List<Compravel> recebidos = new ArrayList<>();
+        List<String> resultados = new ArrayList<>();
 
         for(Compravel c : compraveis){
-            recebidos.add(c);
+            Curso curso = (Curso) c;
+            resultados.add(curso.gerarRecebido(nomeComprador));
         }
 
-        return recebidos;
+        return resultados;
 
-    }*/
+    }
 }
