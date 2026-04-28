@@ -10,10 +10,10 @@ public class Main {
 
         ProcessadorFiscal processador = new ProcessadorFiscal();
 
-        System.out.println(processador.processar(documentoNFE, 80.0, "NFE2"));
-        System.out.println(processador.processar(documentoCTE, 80.0, "CTE2"));
-        System.out.println(processador.processar(documentoNFSE, 80.0, "NFSE2"));
-        System.out.println(processador.processar(documentoMDFE, 80.0, "MDFE2"));
+        System.out.println(processador.processar(documentoNFE, 80.0));
+        System.out.println(processador.processar(documentoCTE, 80.0));
+        System.out.println(processador.processar(documentoNFSE, 80.0));
+        System.out.println(processador.processar(documentoMDFE, 80.0));
 
     }
 }
