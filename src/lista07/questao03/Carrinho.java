@@ -1,6 +1,7 @@
 package lista07.questao03;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Carrinho {
@@ -8,60 +9,53 @@ public class Carrinho {
     private List<Item> itens = new ArrayList<>();
     private double valorFrete;
 
-    public Carrinho(double valorFrete){
-        this.itens = new ArrayList<>();
-        this.valorFrete = valorFrete;
+    public List<Item> getItens() {
+        return itens;
     }
 
     public double getValorFrete() {
         return valorFrete;
     }
 
-    public double subTotalLista(){
-        double total = 0;
-        for(Item item : itens){
-            total += item.getPrecoUnitario();
-        }
-
-        return total;
+    private void setValorFrete(double valor) {
+        this.valorFrete = valor;
     }
 
-    public boolean doisOuMaisDistintos(){
-        int tipos = 0;
-        for(Item item : itens){
-            for(int i = 0; i < itens.size(); i++){
-                if(item.getNome().equals(itens.get(i).getNome())){
-                    tipos += 0;
-                } else {
-                    tipos++;
-                }
+    private void adicionarItem(Item item) {
+        itens.add(item);
+    }
+
+    public double obterMelhorDesconto(List<Regra> regras){
+        Carrinho carrinho = this;
+        regras.sort(new Comparator<Regra>() {
+            @Override
+            public int compare(Regra o1, Regra o2) {
+                return (int)(o1.getDesconto(carrinho) - o2.getDesconto(carrinho));
             }
+        });
+
+        double melhorDesconto = regras.getFirst().getDesconto(carrinho);
+
+        for(Regra regra : regras){
+            double desconto = regra.getDesconto(this);
+            if(desconto > melhorDesconto){
+                melhorDesconto = desconto;
+            }
+            return melhorDesconto;
         }
 
-        return tipos >= 2;
+        return 0;
     }
 
-    public boolean somaTotalDeItensMaiorQue5() {
-        int itensTotais = 0;
-        for(Item item : itens){
-            itensTotais += item.getQuantidade();
-        }
+    public static void main(String[] args){
 
-        return itensTotais > 5;
-    }
+        Carrinho carrinho = new Carrinho();
 
-    public double ValorDoProdutoMaisBarato(){
-        double menorValor = itens.get(0).getPrecoUnitario();
-        for(Item item : itens){
-            if(menorValor > item.getPrecoUnitario()){
-                menorValor = item.getPrecoUnitario();
-            };
-        }
-        return menorValor;
-    }
+        carrinho.setValorFrete(10.00);
+        carrinho.adicionarItem(new Item("Feijão", 5.00, 5));
+        carrinho.adicionarItem(new Item("Arroz", 4.00, 3));
+        carrinho.adicionarItem(new Item("Alface", 2.00, 2));
 
-    public double valorFinal(){
-        return subTotalLista() + valorFrete;
     }
 
 }

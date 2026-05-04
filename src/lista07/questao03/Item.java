@@ -12,9 +12,7 @@ public class Item {
         this.quantidade = quantidade;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
 
     public double getPrecoUnitario() {
         return precoUnitario;
