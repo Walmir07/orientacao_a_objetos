@@ -17,3 +17,12 @@ public class MainApplication extends Application {
         stage.show();
     }
 }
+
+/*
+* Criar tela de login com login controller
+* O mais controler vai ser o listar produtos
+* E deverá ter o adixionar produtos
+* O Model vai ter usuário e produto
+* E terá um repositório de usuário
+* */
+
