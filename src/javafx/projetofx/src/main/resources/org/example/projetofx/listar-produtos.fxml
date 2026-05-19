@@ -13,4 +13,7 @@
     <TextField fx:id="nomeTxt"></TextField>
     <Label fx:id="nomeProduto"></Label>
     <Button text="Definir"></Button>
+
+    <TableView fx:id="produtosTable"></TableView>
+
 </VBox>
