@@ -27,7 +27,7 @@ public class MainController {
     @FXML
     protected void abrirListarProdutos() {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/org/example/projetofx/login-view.fxml")
+                getClass().getResource("/org/example/projetofx/listar-produtos-view.fxml")
         );
 
         Stage stage = (Stage) testeBtn.getScene().getWindow();
