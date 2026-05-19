@@ -1,5 +1,6 @@
 package org.example.projetofx;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Optional;
+import java.util.Scanner;
 
 public class LoginController {
 
@@ -47,7 +49,12 @@ public class LoginController {
                     .autenticar(txtNomeUsuario.getText().trim(), txtSenhaUsuario.getText().trim());
 
             if(usuario.isPresent()){
-                stage.setScene(new Scene(loader.load()));
+                Scene scene = new Scene(loader.load());
+
+                ListarProdutosController controller = loader.getController();
+                controller.setProdutos(FXCollections.observableList())
+
+                stage.setScene(scene);
                 stage.setTitle("Produtos");
             } else {
                 alertaLogin.setVisible(true);

@@ -31,6 +31,9 @@ public class RepositorioUsuarios {
 
     public Optional<Usuario> autenticar(String nome, String senha){
 
+        Usuario u1 = new Usuario("antonio", "123");
+        u1.getProdutos().add(new Produto("Teclado", 100.0));
+
         Usuario u = usuarios.get(nome);
 
         if(u != null && u.getSenha().equals(senha)){

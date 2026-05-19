@@ -1,9 +1,12 @@
 package org.example.projetofx;
 
+import java.util.List;
+
 public class Usuario {
 
     private String nome;
     private String senha;
+    private List<Produto> produtos;
 
     public Usuario(String nome, String senha) {
         this.nome = nome;
@@ -26,4 +29,7 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 }
