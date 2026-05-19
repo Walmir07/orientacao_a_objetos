@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.projetofx.LoginController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <Label text="Nome de usuário"></Label>
+
+    <TextField fx:id="nomeUsuario"></TextField>
+
+    <Label text="Senha"></Label>
+
+    <TextField fx:id="senhaUsuario"></TextField>
+
+    <HBox>
+        <Button fx:id="botaoSair" text="Sair"></Button>
+        <Button fx:id="botaoEntrar" text="Entrar"></Button>
+    </HBox>
+
+</VBox>
