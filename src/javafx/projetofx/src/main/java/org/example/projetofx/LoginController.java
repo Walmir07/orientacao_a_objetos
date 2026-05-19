@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class LoginController {
 
@@ -35,8 +36,14 @@ public class LoginController {
         Stage stage = (Stage) txtNomeUsuario.getScene().getWindow();
 
         try {
-            stage.setScene(new Scene(loader.load()));
-            stage.setTitle("Login");
+
+            Optional<Usuario> usuario = RepositorioUsuarios.getInstance().autenticar("nome", "senha");
+
+            if(usuario.isPresent()){
+                stage.setScene(new Scene(loader.load()));
+                stage.setTitle("Produtos");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
