@@ -43,7 +43,8 @@ public class LoginController {
 
         try {
 
-            Optional<Usuario> usuario = RepositorioUsuarios.getInstance().autenticar("nome", "senha");
+            Optional<Usuario> usuario = RepositorioUsuarios.getInstance()
+                    .autenticar(txtNomeUsuario.getText().trim(), txtSenhaUsuario.getText().trim());
 
             if(usuario.isPresent()){
                 stage.setScene(new Scene(loader.load()));
