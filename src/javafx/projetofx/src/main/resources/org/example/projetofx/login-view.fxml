@@ -22,6 +22,8 @@
     <Label text="Senha"></Label>
     <PasswordField fx:id="txtSenhaUsuario"></PasswordField>
 
+    <Label fx:id="alertaLogin" visible="false" text="Nome de usuário e/ou senha incorretos."></Label>
+
     <HBox spacing="5" alignment="BASELINE_RIGHT">
         <Button fx:id="botaoSair" text="Sair"></Button>
         <Button fx:id="botaoEntrar" text="Entrar" onAction="#autenticar"></Button>
