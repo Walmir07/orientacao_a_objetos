@@ -10,9 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class ListarProdutosController {
-
-    private ObservableList<ProdutoFX> produtos;
-
     @FXML
     protected TableView<ProdutoFX> produtosTable;
     @FXML
@@ -21,7 +18,7 @@ public class ListarProdutosController {
     protected TableColumn<ProdutoFX, Number> colunaPreco;
 
     public void setProdutos(ObservableList<ProdutoFX> produtos) {
-        this.produtos = produtos;
+        produtosTable.setItems(produtos);
     }
 
     @FXML
@@ -32,6 +29,7 @@ public class ListarProdutosController {
         colunaPreco.setCellValueFactory(
                 cell -> cell.getValue().precoProperty()
         );
-    }
 
+
+    }
 }
