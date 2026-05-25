@@ -9,9 +9,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
 public class ProdutoFX {
+    private StringProperty nome = new SimpleStringProperty("");
+    private DoubleProperty preco = new SimpleDoubleProperty(0.0);
 
-    StringProperty nome = new SimpleStringProperty("");
-    DoubleProperty preco = new SimpleDoubleProperty(0.0);
+    public ProdutoFX(Produto produto) {
+        nome.setValue(produto.getNome());
+        preco.setValue(produto.getPreco());
+    }
 
     public StringProperty nomeProperty() {
         return nome;
@@ -21,4 +25,11 @@ public class ProdutoFX {
         return preco;
     }
 
+    public String getNome() {
+        return nome.get();
+    }
+
+    public double getPreco() {
+        return preco.get();
+    }
 }
