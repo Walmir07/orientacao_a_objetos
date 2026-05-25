@@ -1,6 +1,7 @@
 package org.example.projetofx;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,19 +16,11 @@ import java.util.Scanner;
 public class LoginController {
 
     @FXML
-    protected Label alertaLogin;
-
+    Label alertaLogin;
     @FXML
-    protected TextField txtNomeUsuario;
-
+    TextField txtNomeUsuario;
     @FXML
-    protected PasswordField txtSenhaUsuario;
-
-    @FXML
-    protected Button botaoEntrar;
-
-    @FXML
-    protected Button botaoSair;
+    PasswordField txtSenhaUsuario;
 
     @FXML
     protected void initialize() {
@@ -36,7 +29,6 @@ public class LoginController {
 
     @FXML
     protected void autenticar() {
-
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/org/example/projetofx/listar-produtos.fxml")
         );
@@ -44,26 +36,32 @@ public class LoginController {
         Stage stage = (Stage) txtNomeUsuario.getScene().getWindow();
 
         try {
-
             Optional<Usuario> usuario = RepositorioUsuarios.getInstance()
-                    .autenticar(txtNomeUsuario.getText().trim(), txtSenhaUsuario.getText().trim());
+                    .autenticar(txtNomeUsuario.getText().trim(), txtSenhaUsuario.getText());
 
-            if(usuario.isPresent()){
+            if (usuario.isPresent()) {
                 Scene scene = new Scene(loader.load());
 
                 ListarProdutosController controller = loader.getController();
-                controller.setProdutos(FXCollections.observableList())
+
+                ObservableList<ProdutoFX> produtosFx = FXCollections.observableArrayList();
+
+                for (Produto p : usuario.get().getProdutos()) {
+                    produtosFx.add(new ProdutoFX(p));
+                }
+
+                controller.setProdutos(FXCollections.observableList(produtosFx));
 
                 stage.setScene(scene);
                 stage.setTitle("Produtos");
             } else {
                 alertaLogin.setVisible(true);
             }
-
-        } catch (IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
-
     }
-
 }
+
+
+
