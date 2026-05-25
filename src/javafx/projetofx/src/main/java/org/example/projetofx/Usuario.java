@@ -1,5 +1,6 @@
 package org.example.projetofx;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
@@ -11,6 +12,7 @@ public class Usuario {
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
+        this.produtos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -32,4 +34,5 @@ public class Usuario {
     public List<Produto> getProdutos() {
         return produtos;
     }
+
 }
