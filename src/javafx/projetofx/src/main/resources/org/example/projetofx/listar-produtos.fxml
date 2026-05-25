@@ -10,10 +10,14 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.example.projetofx.ListarProdutosController"
       prefHeight="400.0" prefWidth="600.0">
-    <TextField fx:id="nomeTxt"></TextField>
-    <Label fx:id="nomeProduto"></Label>
-    <Button text="Definir"></Button>
 
-    <TableView fx:id="produtosTable"></TableView>
-
+    <TableView fx:id="produtosTable">
+        <columns>
+            <TableColumn fx:id="colunaNome" text="Nome" prefWidth="300"/>
+            <TableColumn fx:id="colunaPreco" text="Preço" prefWidth="150"/>
+        </columns>
+    </TableView>
 </VBox>
+
+
+
